@@ -15,6 +15,10 @@ def create_app() -> Flask:
     def index():
         return jsonify({'status': 200}), 200
 
+    @app.route('/healthcheck')
+    def healthcheck():
+        return jsonify({'status': 200}), 200
+
     def process_nested_dict(input_dict: dict) -> dict:
         updated_dict = {}
 
